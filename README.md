@@ -22,7 +22,7 @@ The variables that can be defined for this role and a brief description if neces
     plight_loglevel: INFO
     plight_logfilesize: 1024000
     plight_logrotationcount: 10
-    plight.statefile: /var/tmp/node_disabled          # File to be used by plight for determining state
+    plight_statefile: /var/tmp/node_disabled          # File to be used by plight for determining state
 
 Example Playbooks
 -----------------
