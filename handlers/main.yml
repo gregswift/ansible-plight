@@ -1,0 +1,3 @@
+---
+- name: Restart plightd
+  service: name=plightd state=restarted
