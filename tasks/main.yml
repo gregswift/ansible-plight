@@ -1,0 +1,38 @@
+---
+- name: Add copr repo file for EL distributions
+  template: src=templates/repo.j2 dest=/etc/yum.repos.d/copr-plight.repo owner=root group=root mode=0644
+  when: ansible_os_family == 'RedHat'
+  tags:
+    - install
+    - packages
+
+- name: Install plight via yum
+  yum: name=plight state=installed
+  when: ansible_os_family == 'RedHat'
+  tags:
+    - install
+    - packages
+
+- name: Configure plightd
+  template: src=templates/config.j2 dest=/etc/plight.conf owner=plight group=plight mode=0644
+  notify:
+    - Restart plightd
+  tags:
+    - install
+    - configuration
+
+- name: Enable plightd service
+  service: name=plightd enabled=yes state=started
+  tags:
+    - install
+    - service
+
+- name: Disable node from pool
+  command: /usr/bin/plight disable
+  tags:
+    - disable
+
+- name: Enable node from pool
+  command: /usr/bin/plight enable
+  tags:
+    - enable

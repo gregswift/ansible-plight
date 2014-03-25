@@ -1,0 +1,18 @@
+[webserver]
+port = {{ webserver.port | default(10101) }}
+host = {{ webserver.host | default('0.0.0.0') }}
+user = {{ webserver.user | default('plight') }}
+group = {{ webserver.group | default('plight') }}
+logfile = {{ webserver.logfile | default('/var/log/plight/access.log') }}
+loglevel = {{ webserver.loglevel | default('INFO') }}
+filesize = {{ webserver.filesize | default(1024000) }}
+rotationcount = {{ webserver.rotationcount | default(10) }}
+
+[logging]
+logfile = {{ logging.logfile | default('/var/log/plight/plight.log') }}
+loglevel = {{ logging.loglevel | default('INFO') }}
+filesize = {{ logging.filesize | default(1024000) }}
+rotationcount = {{ logging.rotationcount | default(10) }}
+
+[permanents]
+statefile = {{ permanents.statefile | default('/var/tmp/node_disabled') }}
