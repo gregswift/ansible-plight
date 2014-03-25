@@ -1,18 +1,18 @@
 [webserver]
-port = {{ webserver.port }}
-host = {{ webserver.host }}
-user = {{ webserver.user }}
-group = {{ webserver.group }}
-logfile = {{ webserver.logfile }}
-loglevel = {{ webserver.loglevel }}
-filesize = {{ webserver.filesize }}
-rotationcount = {{ webserver.rotationcount }}
+port = {{ plight_port }}
+host = {{ plight_host }}
+user = {{ plight_user }}
+group = {{ plight_group }}
+logfile = {{ plight_accesslogfile }}
+loglevel = {{ plight_loglevel }}
+filesize = {{ plight_logfilesize }}
+rotationcount = {{ plight_logrotationcount }}
 
 [logging]
-logfile = {{ logging.logfile }}
-loglevel = {{ logging.loglevel }}
-filesize = {{ logging.filesize }}
-rotationcount = {{ logging.rotationcount }}
+logfile = {{ plight_logfile }}
+loglevel = {{ plight_loglevel }}
+filesize = {{ plight_logfilesize }}
+rotationcount = {{ plight_logrotationcount }}
 
 [permanents]
-statefile = {{ permanents.statefile }}
+statefile = {{ plight_statefile }}

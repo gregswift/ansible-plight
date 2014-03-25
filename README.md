@@ -13,19 +13,16 @@ Role Variables
 
 The variables that can be defined for this role and a brief description if necessary:
 
-    webserver.port: 10101
-    webserver.host: 0.0.0.0                       # IP to bind webservice to, 0.0.0.0 defaults to all
-    webserver.user: plight
-    webserver.group: plight
-    webserver.logfile: /var/log/plight/access.log # Path to access logs for plightd web service
-    webserver.loglevel: INFO
-    webserver.filesize: 1024000
-    webserver.rotationcount: 10
-    logging.logfile: /var/log/plight/plight.log   # Plight runtime logs
-    logging.loglevel: INFO
-    logging.filesize: 1024000
-    logging.rotationcount: 10
-    permanents.statefile: /var/tmp/node_disabled  # File to be used by plight for determining state
+    plight_port: 10101
+    plight_host: 0.0.0.0                              # IP to bind webservice to, 0.0.0.0 defaults to all
+    plight_user: plight
+    plight_group: plight
+    plight_access_logfile: /var/log/plight/access.log # Path to access logs for plightd web service
+    plight_logfile: /var/log/plight/plight.log        # Plight runtime logs
+    plight_loglevel: INFO
+    plight_logfilesize: 1024000
+    plight_logrotationcount: 10
+    plight.statefile: /var/tmp/node_disabled          # File to be used by plight for determining state
 
 Example Playbooks
 -----------------
