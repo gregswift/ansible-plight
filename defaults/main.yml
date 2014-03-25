@@ -9,3 +9,4 @@ plight_loglevel: INFO
 plight_logfilesize: 1024000
 plight_logrotationcount: 10
 plight_statefile: /var/tmp/node_disabled
+plight_package_state: latest

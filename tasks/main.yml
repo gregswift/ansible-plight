@@ -7,7 +7,7 @@
     - packages
 
 - name: Install plight via yum
-  yum: name=plight state=installed
+  yum: name=plight state={{ plight_package_state }}
   when: ansible_os_family == 'RedHat'
   tags:
     - install
