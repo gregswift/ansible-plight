@@ -6,26 +6,47 @@ A role that covers installation, basic configuration, and usage of plight. Pligh
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This module should work on any Linux platform where plight can be installed. However this role will cover installation for EL or Fedora systems.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The variables that can be defined for this role and a brief description if necessary:
 
-Dependencies
-------------
+    webserver.port: 10101
+    webserver.host: 0.0.0.0                       # IP to bind webservice to, 0.0.0.0 defaults to all
+    webserver.user: plight
+    webserver.group: plight
+    webserver.logfile: /var/log/plight/access.log # Path to access logs for plightd web service
+    webserver.loglevel: INFO
+    webserver.filesize: 1024000
+    webserver.rotationcount: 10
+    logging.logfile: /var/log/plight/plight.log   # Plight runtime logs
+    logging.loglevel: INFO
+    logging.filesize: 1024000
+    logging.rotationcount: 10
+    permanents.statefile: /var/tmp/node_disabled  # File to be used by plight for determining state
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Example Playbooks
+-----------------
 
-Example Playbook
--------------------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Install plight
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - plight
+
+Disable a node for a deploy
+
+    - hosts: servers
+      roles:
+         - { role: plight, tags: ['disable'] }
+
+Enable a node after a deploy
+
+    - hosts: servers
+      roles:
+         - { role: plight, tags: ['enable'] }
 
 License
 -------
