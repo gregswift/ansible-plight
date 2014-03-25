@@ -11,7 +11,7 @@ This module should work on any Linux platform where plight can be installed. How
 Role Variables
 --------------
 
-The variables that can be defined for this role and a brief description if necessary:
+The following variables are used by this role and values are defined in defaults/main.yml:
 
     plight_port: 10101
     plight_host: 0.0.0.0                              # IP to bind webservice to, 0.0.0.0 defaults to all
@@ -23,6 +23,7 @@ The variables that can be defined for this role and a brief description if neces
     plight_logfilesize: 1024000
     plight_logrotationcount: 10
     plight_statefile: /var/tmp/node_disabled          # File to be used by plight for determining state
+    plight_package_state: latest                      # If you want to ensure plight is installed, or current
 
 Example Playbooks
 -----------------
