@@ -3,16 +3,16 @@ port = {{ plight_port }}
 host = {{ plight_host }}
 user = {{ plight_user }}
 group = {{ plight_group }}
-logfile = {{ plight_accesslogfile }}
-loglevel = {{ plight_loglevel }}
-filesize = {{ plight_logfilesize }}
-rotationcount = {{ plight_logrotationcount }}
+logfile = {{ plight_log_accessfile }}
+loglevel = {{ plight_log_level }}
+filesize = {{ plight_log_filesize }}
+rotationcount = {{ plight_log_rotationcount }}
 
 [logging]
-logfile = {{ plight_logfile }}
-loglevel = {{ plight_loglevel }}
-filesize = {{ plight_logfilesize }}
-rotationcount = {{ plight_logrotationcount }}
+logfile = {{ plight_log_file }}
+loglevel = {{ plight_log_level }}
+filesize = {{ plight_log_filesize }}
+rotationcount = {{ plight_log_rotationcount }}
 
 [permanents]
-statefile = {{ plight_statefile }}
+statefile = {{ plight_state_file }}

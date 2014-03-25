@@ -17,12 +17,12 @@ The following variables are used by this role and values are defined in defaults
     plight_host: 0.0.0.0                              # IP to bind webservice to, 0.0.0.0 defaults to all
     plight_user: plight
     plight_group: plight
-    plight_access_logfile: /var/log/plight/access.log # Path to access logs for plightd web service
-    plight_logfile: /var/log/plight/plight.log        # Plight runtime logs
-    plight_loglevel: INFO
-    plight_logfilesize: 1024000
-    plight_logrotationcount: 10
-    plight_statefile: /var/tmp/node_disabled          # File to be used by plight for determining state
+    plight_log_accessfile: /var/log/plight/access.log # Path to access logs for plightd web service
+    plight_log_file: /var/log/plight/plight.log       # Plight runtime logs
+    plight_log_level: INFO
+    plight_log_filesize: 1024000
+    plight_log_rotationcount: 10
+    plight_state_file: /var/tmp/node_disabled         # File to be used by plight for determining state
     plight_package_state: latest                      # If you want to ensure plight is installed, or current
 
 Example Playbooks

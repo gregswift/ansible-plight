@@ -3,10 +3,10 @@ plight_port: 10101
 plight_host: 0.0.0.0
 plight_user: plight
 plight_group: plight
-plight_access_logfile: /var/log/plight/access.log
-plight_logfile: /var/log/plight/plight.log
-plight_loglevel: INFO
-plight_logfilesize: 1024000
-plight_logrotationcount: 10
-plight_statefile: /var/tmp/node_disabled
+plight_log_accessfile: /var/log/plight/access.log
+plight_log_file: /var/log/plight/plight.log
+plight_log_level: INFO
+plight_log_filesize: 1024000
+plight_log_rotationcount: 10
+plight_state_file: /var/tmp/node_disabled
 plight_package_state: latest
