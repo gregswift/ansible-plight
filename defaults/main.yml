@@ -1,0 +1,17 @@
+---
+webserver:
+ - port: 10101
+ - host: 0.0.0.0
+ - user: plight
+ - group: plight
+ - logfile: /var/log/plight/access.log
+ - loglevel: INFO
+ - filesize: 1024000
+ - rotationcount: 10
+logging:
+ - logfile: /var/log/plight/plight.log
+ - loglevel: INFO
+ - filesize: 1024000
+ - rotationcount: 10
+permanents:
+ - statefile: /var/tmp/node_disabled
