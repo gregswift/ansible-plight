@@ -1,0 +1,6 @@
+---
+- name : Plight node state management
+  hosts : all
+  sudo : True
+  roles:
+    - plight
