@@ -19,7 +19,7 @@
     - Restart plightd
   tags:
     - install
-    - configuration
+    - configure
 
 - name: Enable plightd service
   service: name=plightd enabled=yes state=started

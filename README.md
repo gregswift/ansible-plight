@@ -27,9 +27,10 @@ The following variables are used by this role and values are defined in defaults
 
 Tags
 ----
-* installation - includes packages and configuration
+* install - includes packages, configure, and service
 * packages - configure yum repo and install plight package. Currently EL/Fedora only
-* configuration - populate plight.conf
+* configure - populate plight.conf
+* service - Enable and start plightd
 * disable - Remove node from rotation
 * enable - Add node to rotation
 
