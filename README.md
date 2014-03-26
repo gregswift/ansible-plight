@@ -25,10 +25,18 @@ The following variables are used by this role and values are defined in defaults
     plight_state_file: /var/tmp/node_disabled         # File to be used by plight for determining state
     plight_package_state: latest                      # If you want to ensure plight is installed, or current
 
+Tags
+----
+* installation - includes packages and configuration
+* packages - configure yum repo and install plight package. Currently EL/Fedora only
+* configuration - populate plight.conf
+* disable - Remove node from rotation
+* enable - Add node to rotation
+
 Example Playbooks
 -----------------
 
-Install plight
+Install plight (runs through entire playbook, including disabling and enabling)
 
     - hosts: servers
       roles:
