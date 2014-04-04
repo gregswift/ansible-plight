@@ -1,18 +1,14 @@
 ---
-- hosts: all
-  tasks:
-    - group_by: key= {{ ansible_os_family }}
-
 - name: Add copr repo file for EL distributions
-  hosts: RedHat
   template: src=repo.j2 dest=/etc/yum.repos.d/copr-plight.repo owner=root group=root mode=0644
+  when: ansible_os_family == 'RedHat'
   tags:
     - install
     - packages
 
 - name: Install plight via yum
-  hosts: RedHat
   yum: name=plight state={{ plight_package_state }}
+  when: ansible_os_family == 'RedHat'
   tags:
     - install
     - packages
