@@ -1,6 +1,6 @@
 ---
 - name: Add copr repo file for EL distributions
-  template: src=templates/repo.j2 dest=/etc/yum.repos.d/copr-plight.repo owner=root group=root mode=0644
+  template: src=repo.j2 dest=/etc/yum.repos.d/copr-plight.repo owner=root group=root mode=0644
   when: ansible_os_family == 'RedHat'
   tags:
     - install
@@ -14,7 +14,7 @@
     - packages
 
 - name: Configure plightd
-  template: src=templates/config.j2 dest=/etc/plight.conf owner=plight group=plight mode=0644
+  template: src=config.j2 dest=/etc/plight.conf owner=plight group=plight mode=0644
   notify:
     - Restart plightd
   tags:

@@ -1,6 +1,6 @@
 [xaeth-Plight]
 name=Copr repo for Plight owned by xaeth
-baseurl=http://copr-be.cloud.fedoraproject.org/results/xaeth/Plight/{% if ansible_distribution == 'Fedora' %}fedora{% else %}epel{% endif %}-{{ ansible_distribution_version }}-$basearch/
+baseurl=http://copr-be.cloud.fedoraproject.org/results/xaeth/Plight/{% if ansible_distribution == 'Fedora' %}fedora{% else %}epel{% endif %}-{{ ansible_distribution_version.split('.')[0] }}-$basearch/
 skip_if_unavailable=True
 gpgcheck=0
 enabled=1
