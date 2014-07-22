@@ -37,23 +37,20 @@ Tags
 Example Playbooks
 -----------------
 
-Install plight (runs through entire playbook, including disabling and enabling)
-
+Install plight (runs through entire role, including disabling and enabling)
+    # plight.yml
+    ---
     - hosts: servers
       roles:
          - plight
 
-Disable a node for a deploy
+Disable a node for a deploy, use the above play and call this way from the CLI
 
-    - hosts: servers
-      roles:
-         - { role: plight, tags: ['disable'] }
+    ansible-playbook --tags disable plight.yml
 
 Enable a node after a deploy
 
-    - hosts: servers
-      roles:
-         - { role: plight, tags: ['enable'] }
+    ansible-playbook --tags enable plight.yml
 
 License
 -------
